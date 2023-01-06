@@ -1,5 +1,7 @@
 import streamlit as st
 import openai
+import os
+
 openai.api_key = os.getenv("openAI_key")
 def ask_question(prompt):
   completions = openai.Completion.create(
