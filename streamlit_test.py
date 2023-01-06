@@ -26,7 +26,7 @@ popp = "askdjhbkf"
 #st.write(f"You entered: {text_input}")
 
 # Add a button to run some logic
-if st.button(f"Process {popp}"):
+if st.button(f"Process"):
     # Do something with the text
     prompt = "Please generate a long polite style email from following text: "
     prompt += text_input
