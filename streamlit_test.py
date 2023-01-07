@@ -1,10 +1,8 @@
 import streamlit as st
 import openai
 import os
-from pathlib import Path
 
 openai.api_key = os.getenv("openAI_key")
-
 def ask_question(prompt):
   completions = openai.Completion.create(
     engine="text-davinci-002",
