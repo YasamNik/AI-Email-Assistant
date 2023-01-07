@@ -1,7 +1,10 @@
 import streamlit as st
 import openai
-#openai.api_key = "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"
-openai.api_key = "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"
+import os
+from pathlib import Path
+
+openai.api_key = os.getenv("openAI_key")
+
 def ask_question(prompt):
   completions = openai.Completion.create(
     engine="text-davinci-002",
@@ -14,10 +17,23 @@ def ask_question(prompt):
 
   message = completions.choices[0].text
   return message
+#Variables  
+PAGE_TITLE = "Email Assistant"
+PAGE_ICON = "💡"
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+css_file = current_dir / "styles" / "main.css"
+
+#Config Page
+st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+
+#Load css
+with open(css_file) as f:
+    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+
 
 # Title and header
 st.title("AI Email Assistant")
-st.header("Enter row email body text")
+st.header("Enter an email body text")
 
 # Create a text input field
 text_input = st.text_area("Enter email text here :")
