@@ -1,4 +1,5 @@
 from pathlib import Path
+import time
 import streamlit as st
 import openai
 import os
@@ -32,24 +33,38 @@ with open(css_file) as f:
 
 # Sidebar
 # Using object notation
-email_style = st.sidebar.selectbox(
-    "Select Email Format Type",
-    ("Business", "Friendly", "Standard")
-)
+# email_style = st.sidebar.selectbox(
+#     "Select Email Format Type",
+#     ("Business", "Friendly", "Standard")
+# )
 
 # Using "with" notation
-with st.sidebar:
-    email_size = st.radio(
-        "Choose an email size",
-        ("Short", "Long")
-    )
-
+# with st.sidebar:
+    # email_size = st.radio(
+    #     "Choose an email size",
+    #     ("Short", "Long")
+    # )
+st.image("images/email_assistant_circle.png", width=64)
 # Title and header
 st.title("AI Email Assistant")
-st.header("Enter an email body text")
+#st.header("Enter an email body text")
 
+#Columns
+col1, col2 = st.columns(2,gap="large")
+with col1:
+  email_size = st.radio(
+          "Choose an email size:",
+          ("Short", "Long"), horizontal=True
+      )
+with col2:
+  email_style = st.radio(
+      "Select Email Format Type:",
+      ("Business", "Friendly", "Standard"), horizontal=True
+  )
+# Additional notes
+notes = st.text_input("Add additional notes: ",help="You can add additional instructions e.g. polite request")
 # Create a text input field
-text_input = st.text_area("Enter email text here :")
+text_input = st.text_area("Enter email text here:")
 
 # Display the text that the user entered
 #st.write(f"You entered: {text_input}")
@@ -57,8 +72,9 @@ text_input = st.text_area("Enter email text here :")
 # Add a button to run some logic
 if st.button(f"Process"):
     # Do something with the text
-    prompt = f"Please generate a {email_size}, {email_style} style email from the following text: "
+    prompt = f"Please generate a {email_size}, {email_style} style email {notes} from the following text with professional look and paragraph formatting: "
     prompt += text_input
+    print(prompt)
     result = ask_question(prompt)
     #st.write(f"Result: {result}")
     #For testing
