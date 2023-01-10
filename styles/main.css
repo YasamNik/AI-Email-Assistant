@@ -3,6 +3,7 @@
 
 * {font-family: 'Readex Pro';}
 
+
   
 a {
     text-decoration: none;
@@ -25,3 +26,58 @@ hr {
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+
+div.css-1om1ktf.e1y61itm0{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    font-style: italic;
+    border-width: 2px;
+    border-color: #d33682;
+    text-decoration-color: #d33682;
+}
+
+button.css-1utb7vj.edgvbvh10{
+    background-color: #169205;
+    border: 0;
+    border-radius: 56px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    padding: 10px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button.css-1utb7vj.edgvbvh10:before {
+    background-color: initial;
+    background-image: linear-gradient(#FCDDBC 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 25px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 92%;
+  }
+
+button.css-1utb7vj.edgvbvh10:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+  }
+
+
+  @media (min-width: 768px) {
+    button.css-1utb7vj.edgvbvh10 {
+      padding: 16px 48px;
+    }
+  }  
