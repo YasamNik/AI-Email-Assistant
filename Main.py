@@ -22,6 +22,8 @@ prompt=""
 PAGE_TITLE = "Email Assistant"
 PAGE_ICON = "images/AI_icon.png"
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+previous_dir = os.path.dirname(current_dir)
+#print(previous_dir)
 css_file = current_dir / "styles" / "main.css"
 
 #Config Page
