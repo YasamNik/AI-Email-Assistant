@@ -21,10 +21,10 @@ def ask_question(prompt):
 prompt=""
 PAGE_TITLE = "General Assistant"
 PAGE_ICON = "images/AI_icon.png"
-current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-previous_dir = os.path.dirname(current_dir)
+current_dir = Path(__file__).parent.parent if "__file__" in locals() else Path.cwd()
+#previous_dir = os.path.dirname(current_dir)
 #print(previous_dir)
-css_file = previous_dir + "\styles" + "\main.css"
+css_file = current_dir / "styles" / "main.css"
 
 #Config Page
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
