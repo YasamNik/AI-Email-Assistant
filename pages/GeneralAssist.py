@@ -7,16 +7,17 @@ import os
 openai.api_key = os.getenv("openAI_key")
 def ask_question(prompt):
   completions = openai.Completion.create(
-    engine="text-davinci-002",
+    engine="text-davinci-002", 
+    # model = "gpt-3.5-turbo", 
     prompt=prompt,
     max_tokens=1024,
     n=1,
-   stop=None,
+    stop=None,
     temperature=0.5,
   )
-
   message = completions.choices[0].text
   return message
+
 #Variables  "💡"
 prompt=""
 PAGE_TITLE = "General Assistant"
@@ -56,5 +57,5 @@ if st.button(f"Process"):
     #For testing
     st.write("---")
     #text_output = st.text_area("Result is here :", prompt)
-    st.code(result, None)
+    st.text_area('Summary', result)
 

@@ -81,6 +81,8 @@ if st.button(f"Process"):
     #st.write(f"Result: {result}")
     #For testing
     st.write("---")
+    result = result.replace(". ", ".\n")
     #text_output = st.text_area("Result is here :", prompt)
-    st.code(result, None)
+    st.code(result, language='parser')
+    # st.text_area('Here you go:', result)
 
